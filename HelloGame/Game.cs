@@ -29,7 +29,7 @@ namespace HelloGame
 
             if(message == "1")
             {
-                isRunning = false;
+                //isRunning = false;
             }
         }
 
