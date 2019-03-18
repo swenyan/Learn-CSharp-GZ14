@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBank", "HelloBank\Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLoop", "GameLoop\GameLoop.csproj", "{FEA5D1C2-3093-4692-A114-5C82B5C0DDC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectRelation", "ObjectRelation\ObjectRelation.csproj", "{E65077EA-6219-4E8D-B175-A45BDE8F76A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FEA5D1C2-3093-4692-A114-5C82B5C0DDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA5D1C2-3093-4692-A114-5C82B5C0DDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA5D1C2-3093-4692-A114-5C82B5C0DDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65077EA-6219-4E8D-B175-A45BDE8F76A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65077EA-6219-4E8D-B175-A45BDE8F76A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65077EA-6219-4E8D-B175-A45BDE8F76A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65077EA-6219-4E8D-B175-A45BDE8F76A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
