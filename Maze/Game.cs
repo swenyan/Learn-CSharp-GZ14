@@ -9,14 +9,34 @@ namespace Maze
     {
         public bool isRunning;
 
+        private bool isPlayerWon;
+
         private ConsoleKeyInfo key;
         private string keyString;
+        private string hintString = "WASD-移动，R-重新开始，ESC-退出";
         private Stage stage;
+
+        int row;
+        int col;
+        int playerStartPosX;
+        int playerStartPosY;
 
         public Game(int row, int col, int playerPosX, int playerPosY)
         {
+            this.row = row;
+            this.col = col;
+            this.playerStartPosX = playerPosX;
+            this.playerStartPosY = playerPosY;
+
+            Init();
+        }
+
+        private void Init()
+        {
             isRunning = true;
-            stage = new Stage(row, col, playerPosX, playerPosY);
+            isPlayerWon = false;
+            keyString = "";
+            stage = new Stage(row, col, playerStartPosX, playerStartPosY);
         }
 
         public void Loop()
@@ -46,6 +66,17 @@ namespace Maze
                     keyString = "向右";
                     stage.MovePlayer(Stage.RIGHT);
                     break;
+                case ConsoleKey.Escape:
+                    isRunning = false;
+                    break;
+                case ConsoleKey.R:
+                    Init();
+                    break;
+            }
+
+            if(stage.IsPlayerReachedGoal())
+            {
+                isPlayerWon = true;
             }
         }
 
@@ -59,6 +90,16 @@ namespace Maze
             Console.Clear();
             Console.WriteLine(keyString);
             stage.DrawStage();
+            Console.WriteLine(hintString);
+            if (isPlayerWon)
+            {
+                Console.WriteLine("你赢了！");
+            }
+        }
+
+        public void End()
+        {
+            Console.WriteLine("欢迎再玩，再见！");
         }
     }
 }

@@ -18,6 +18,9 @@ namespace Maze
         public int playerPosX = 1;
         public int playerPosY = 1;
 
+        public int goalPosX = 0;
+        public int goalPosY = 0;
+
         char[] stage;
 
         public Stage(int row, int col, int playerPosX, int playerPosY)
@@ -34,6 +37,17 @@ namespace Maze
 
         private void CreateStage(int row, int col)
         {
+            Block[] blocks = new Block[9];
+            blocks[0] = new Block(2, 2, '#');
+            blocks[1] = new Block(2, 3, '#');
+            blocks[2] = new Block(2, 4, '#');
+            blocks[3] = new Block(3, 6, '#');
+            blocks[4] = new Block(4, 2, '#');
+            blocks[5] = new Block(5, 2, '#');
+            blocks[6] = new Block(5, 4, '#');
+            blocks[7] = new Block(5, 5, '#');
+            blocks[8] = new Block(6, 6, 'o');
+
             stage = new char[row * col];
 
             for (int i = 0; i < row; i++)
@@ -44,17 +58,28 @@ namespace Maze
 
                     if (isWall)
                     {
-                        stage[i * col + t] = '*';
+                        CreateBlock(t, i, '*');
+                        //stage[i * col + t] = '*';
                     }
                     else
                     {
-                        stage[i * col + t] = ' ';
+                        CreateBlock(t, i, ' ');
                     }
+                }
+            }
+
+            for(int i = 0; i < blocks.Length; i++)
+            {
+                CreateBlock(blocks[i].x, blocks[i].y, blocks[i].blockChar);
+                if(blocks[i].blockChar == 'o')
+                {
+                    goalPosX = blocks[i].x;
+                    goalPosY = blocks[i].y;
                 }
             }
         }
 
-        private static bool IsWall(int row, int col, int i, int t)
+        private bool IsWall(int row, int col, int i, int t)
         {
             bool isWall = false;
 
@@ -63,26 +88,30 @@ namespace Maze
             // 判断标准：
             // 第一行和最后一行必定是围墙
             // 第一列和最后一列必定是围墙
-
+            // '#'字符也是不能走的
             bool isFirstRow = false;
             bool isLastRow = false;
             bool isFirstCol = false;
             bool isLastCol = false;
+            bool isObstacle = false;
 
             // 是否第一行
-            isFirstRow = (i == 0);
+            isFirstRow = (t == 0);
 
             // 是否最后一行
-            isLastRow = (i == row - 1);
+            isLastRow = (t == row - 1);
 
             // 是否第一列
-            isFirstCol = (t == 0);
+            isFirstCol = (i == 0);
 
             // 是否最后一列
-            isLastCol = (t == col - 1);
+            isLastCol = (i == col - 1);
 
-            // 上述四个条件任何一个满足，就是围墙
-            isWall = isFirstRow || isLastRow || isFirstCol || isLastCol;
+            // 是不是 # 字障碍物
+            isObstacle = (stage[t * col + i] == '#');
+
+            // 上述五个条件任何一个满足，就是围墙
+            isWall = isFirstRow || isLastRow || isFirstCol || isLastCol || isObstacle;
             return isWall;
         }
 
@@ -91,13 +120,13 @@ namespace Maze
             if(IsWall(row, col, newPosX, newPosY) == false)
             {
                 int currentIdx = playerPosY * col + playerPosX;
-                stage[currentIdx] = ' ';
+                //stage[currentIdx] = ' ';
 
                 playerPosX = newPosX;
                 playerPosY = newPosY;
 
                 int idx = newPosY * col + newPosX;
-                stage[idx] = 'p';
+                //stage[idx] = 'p';
             }
         }
 
@@ -124,7 +153,15 @@ namespace Maze
         {
             for (int i = 0; i < stage.Length; i++)
             {
-                Console.Write(stage[i]);
+                if(playerPosY * col + playerPosX == i)
+                {
+                    Console.Write('p');
+                }
+                else
+                {
+                    Console.Write(stage[i]);
+                }
+
                 Console.Write(' ');
 
                 int mod = i % col;
@@ -133,6 +170,16 @@ namespace Maze
                     Console.Write('\n');
                 }
             }
+        }
+
+        private void CreateBlock(int x, int y, char block)
+        {
+            stage[y * this.col + x] = block;
+        }
+
+        public bool IsPlayerReachedGoal()
+        {
+            return (playerPosX == goalPosX && playerPosY == goalPosY);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Maze
                 game.Loop();
             }
 
+            game.End();
+
             //for (int i = 0; i < charArray.Length; i++)
             //{
             //    Console.WriteLine(charArray[i]);
