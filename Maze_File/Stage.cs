@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.IO;
+
 namespace Maze_File
 {
     class Stage
@@ -22,6 +24,65 @@ namespace Maze_File
         public int goalPosY = 0;
 
         char[] stage;
+
+        // 生成指定关卡的地图
+        public Stage(int level)
+        {
+            stage = ReadMapData(level);
+            SetPlayerPos(this.playerPosX, this.playerPosY);
+
+            //ReadMapData(level);
+        }
+
+        public char[] ReadMapData(int level)
+        {
+            // 根据关卡编号，得出关卡地图的txt文件路径
+            string mapPath = string.Format("./Map_{0}.txt", level);
+
+            string[] mapLines = File.ReadAllLines(mapPath);
+
+            int row = mapLines.Length;      // 字符串数组的长度就是地图的行数
+            int col = mapLines[0].Length;   // 单个字符串的字符个数就是地图的列数
+
+            this.row = row;
+            this.col = col;
+
+            char[] ret = new char[row * col];
+
+            for (int i = 0; i < row; i++)
+            {
+                for(int t = 0; t < col; t++)
+                {
+                    char block = mapLines[i][t];
+
+                    if (block == 'p')
+                    {
+                        //Console.WriteLine("玩家起始位置：{0},{1}", i, t);
+                        playerPosX = t;
+                        playerPosY = i;
+                        block = ' ';
+                    }
+                    else if(block == 'o')
+                    {
+                        //Console.WriteLine("出口位置：{0},{1}", i, t);
+                        goalPosX = t;
+                        goalPosY = i;
+                    }
+
+                    ret[i * col + t] = block;
+                }
+            }
+
+            return ret;
+        }
+
+        public static bool HasLevel(int level)
+        {
+            // 根据关卡编号，得出关卡地图的txt文件路径
+            string mapPath = string.Format("./Map_{0}.txt", level);
+
+            return File.Exists(mapPath);
+        }
 
         public Stage(int row, int col, int playerPosX, int playerPosY)
         {
