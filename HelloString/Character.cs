@@ -30,7 +30,7 @@ namespace HelloString
 
         public void ShowProfile()
         {
-            Console.WriteLine("姓名-{0}，职业-{1}，等级-{2}，生命-{3}，魔力-{4}，攻击-{5}，防御-{5}", name, job, level, hp, mana, atk, def);
+            Console.WriteLine("姓名-{0}，职业-{1}，等级-{2}，生命-{3}，魔力-{4}，攻击-{5}，防御-{6}", name, job, level, hp, mana, atk, def);
         }
 
         public string GetProfileString()

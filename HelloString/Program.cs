@@ -17,12 +17,15 @@ namespace HelloString
             for(int i = 1; i < profileStrings.Length; i++)
             {
                 Character savedCharacter = CreateCharacterFromText(profileStrings[i]);
-                savedCharacter.LevelUp();
-                charList.Add(savedCharacter);
+                //charList.Add(savedCharacter);
+                //savedCharacter.LevelUp();
+                //SaveCharacter(savedCharacter);
             }
 
-            SaveCharacter(charList[0]);
-            SaveCharacter(charList[2]);
+            for (int i = 1; i < charList.Count; i++)
+            {
+                charList[i].ShowProfile();
+            }
 
             //Character newCharacter = new Character("新玩家", 1, 1, 100, 200, 50, 25);
             Console.Read();
