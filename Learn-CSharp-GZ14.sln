@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{87407A1A-AA05-4705-BF26-F14A962088E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloBank", "HelloBank\HelloBank.csproj", "{54BC0261-761B-4F86-A1E5-2656E587F66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDictionary", "HelloDictionary\HelloDictionary.csproj", "{2FFBED3B-D1F8-434B-A2D2-4C9A8001913E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{54BC0261-761B-4F86-A1E5-2656E587F66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54BC0261-761B-4F86-A1E5-2656E587F66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54BC0261-761B-4F86-A1E5-2656E587F66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFBED3B-D1F8-434B-A2D2-4C9A8001913E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFBED3B-D1F8-434B-A2D2-4C9A8001913E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFBED3B-D1F8-434B-A2D2-4C9A8001913E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFBED3B-D1F8-434B-A2D2-4C9A8001913E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
