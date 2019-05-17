@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{472B4435-63A2-4B19-8B25-FA54D72D710F}</ProjectGuid>
+    <ProjectGuid>{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HelloDelegate</RootNamespace>
-    <AssemblyName>HelloDelegate</AssemblyName>
+    <RootNamespace>HelloEvent</RootNamespace>
+    <AssemblyName>HelloEvent</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

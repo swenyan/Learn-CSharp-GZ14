@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDictionary", "HelloDic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDelegate", "HelloDelegate\HelloDelegate.csproj", "{472B4435-63A2-4B19-8B25-FA54D72D710F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloEvent", "HelloEvent\HelloEvent.csproj", "{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{472B4435-63A2-4B19-8B25-FA54D72D710F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{472B4435-63A2-4B19-8B25-FA54D72D710F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{472B4435-63A2-4B19-8B25-FA54D72D710F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6ADBBC-4E3B-4053-B187-B8F34CCBC4FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
